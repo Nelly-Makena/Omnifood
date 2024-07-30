@@ -11,17 +11,30 @@
     <section id="home">
         <div class="top">
             <img src="Images/omnifood-logo.png" alt="logo">
-            <div class="toggle-button">&#9776;</div> <!-- Toggle button -->
             <div class="links">
                 <ul>
-                    <li><a href="#">How It Works</a></li>
-                    <li><a href="#">Meals</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Pricing</a></li>
+                    <li class=".hideOnMobile"><a href="#">How It Works</a></li>
+                    <li class=".hideOnMobile"><a href="#">Meals</a></li>
+                    <li class=".hideOnMobile"><a href="#">Testimonials</a></li>
+                    <li class=".hideOnMobile"><a href="#">Pricing</a></li>
                     
                 </ul>
-                <button class="button-primary">Try For Free</button>
+                
+          <button class="button-primary">Try For Free</button>
+          <li class="menubar" onclick=showSidebar()><i class="fa-solid fa-bars"></i></li> 
+
             </div>
+            <ul class="sidebar">
+          <li onclick=hideSidebar()><i class="fa-solid fa-xmark"></i></li> 
+
+
+                <li><a href="#">How It Works</a></li>
+                <li><a href="#">Meals</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">Pricing</a></li>
+                
+            </ul>
+            
         </div>
         <div class="f-sec">
         <div class="intro">
@@ -364,14 +377,16 @@
     </div>
 </footer>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const toggleButton = document.querySelector('.toggle-button');
-        const links = document.querySelector('.top .links');
+   function showSidebar() {
+    const sidebar =document.querySelector('.sidebar')
+    sidebar.style.display ='flex'
 
-        toggleButton.addEventListener('click', function() {
-            links.classList.toggle('active');
-        });
-    });
+   }
+   function hideSidebar() {
+    const sidebar =document.querySelector('.sidebar')
+    sidebar.style.display ='none'
+    
+   }
 </script>
 </body>
 </html>
